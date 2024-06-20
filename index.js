@@ -1,22 +1,30 @@
-let diceP1 = Math.floor(Math.random() * 6) + 1 ;
+const button_refresh = document.getElementById("refresh")
 
-let randomP1 = "./images/dice" +diceP1+".png";
+button_refresh.addEventListener("click", main)
 
-let diceP2 = Math.floor(Math.random() * 6) + 1;
+function main() {
+    let diceP1 = Math.floor(Math.random() * 6) + 1 ;
 
-let randomP2 = "./images/dice" +diceP2+".png";
+    let randomP1 = "./images/dice" +diceP1+".png";
+
+    let diceP2 = Math.floor(Math.random() * 6) + 1;
+
+    let randomP2 = "./images/dice" +diceP2+".png";
 
 
-document.querySelector(".img1").setAttribute("src", randomP1)
+    document.querySelector(".img1").setAttribute("src", randomP1)
 
 
-document.querySelector(".img2").setAttribute("src", randomP2)
+    document.querySelector(".img2").setAttribute("src", randomP2)
 
-if(diceP1 > diceP2){
-    document.querySelector("h1").innerText = "Player 1 wins"
-} else if(diceP1 < diceP2){
-    document.querySelector("h1").innerText = "Player 2 wins"
-} else if( diceP1 == diceP2){
-    document.querySelector("h1").innerText = "Draw!"
+    if(diceP1 > diceP2){
+        document.querySelector("h1").innerText = "Player 1 wins"
+    } else if(diceP1 < diceP2){
+        document.querySelector("h1").innerText = "Player 2 wins"
+    } else if( diceP1 == diceP2){
+        document.querySelector("h1").innerText = "Draw!"
 
+    }
 }
+
+main()
